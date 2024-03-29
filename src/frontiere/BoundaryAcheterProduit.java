@@ -1,11 +1,8 @@
 package frontiere;
 
-import java.util.Scanner;
-
 import controleur.ControlAcheterProduit;
 
 public class BoundaryAcheterProduit {
-	private Scanner scan = new Scanner(System.in);
 	private ControlAcheterProduit controlAcheterProduit;
 
 	public BoundaryAcheterProduit(ControlAcheterProduit controlAcheterProduit) {
@@ -13,7 +10,6 @@ public class BoundaryAcheterProduit {
 	}
 
 	public void acheterProduit(String nomAcheteur) {
-		// TODO à completer
 		if (!controlAcheterProduit.verifierIdentite(nomAcheteur)) {
 			System.out.println("Je suis désolée " + nomAcheteur + " mais il faut être un habitant de notre village pour acheter ici.");
 			return;
