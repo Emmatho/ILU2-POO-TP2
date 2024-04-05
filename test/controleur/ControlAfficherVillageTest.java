@@ -1,8 +1,6 @@
 package controleur;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -35,6 +33,20 @@ class ControlAfficherVillageTest {
 	@Test
 	void testDonnerNomsVillageois() {
 		ControlAfficherVillage controlAffVillage = new ControlAfficherVillage(village);
-		assertEquals(controlAffVillage.donnerNomsVillageois(), village.donnerVillageois());
+		assertEquals(controlAffVillage.donnerNomsVillageois()[0], "Abraracourcix");
+		assertEquals(controlAffVillage.donnerNomsVillageois()[1], "Bonemine");
+		assertEquals(controlAffVillage.donnerNomsVillageois()[2], village.donnerVillageois()[2]);
+	}
+	
+	@Test
+	void testDonnerNomVillage() {
+		ControlAfficherVillage controlAffVillage = new ControlAfficherVillage(village);
+		assertEquals(controlAffVillage.donnerNomVillage(), "le village des irréductibles");
+	}
+	
+	@Test
+	void testDonnerNbEtals() {
+		ControlAfficherVillage controlAffVillage = new ControlAfficherVillage(village);
+		assertEquals(controlAffVillage.donnerNbEtals(), 5);
 	}
 }
